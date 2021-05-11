@@ -17,11 +17,11 @@ export class LinkedList<T> {
   }
 
   *iterator(): IterableIterator<T> {
-    let cur = this._head
+    let currentNode = this._head
 
-    while (cur) {
-      yield cur.val
-      cur = cur.next
+    while (currentNode) {
+      yield currentNode.val
+      currentNode = currentNode.next
     }
   }
 
@@ -119,17 +119,17 @@ export class LinkedList<T> {
       return false
     }
 
-    let cur = this._head
+    let currentNode = this._head
     for (let j = 0; j < i - 1; j++) {
-      cur = cur.next!
+      currentNode = currentNode.next!
     }
 
     let newNode = new LinkedListNode<T>(val)
-    cur.next!.prev = newNode
-    newNode.next = cur.next
+    currentNode.next!.prev = newNode
+    newNode.next = currentNode.next
 
-    cur.next = newNode
-    newNode.prev = cur
+    currentNode.next = newNode
+    newNode.prev = currentNode
 
     this._length++
 
@@ -139,29 +139,29 @@ export class LinkedList<T> {
   remove(val: T): boolean {
     if (this._length < 1) return false
 
-    let cur = this._head
+    let currentNode = this._head
     for (let i = 0; i < this._length; i++) {
-      if (!cur) return false
+      if (!currentNode) return false
 
-      if (cur.val === val) {
+      if (currentNode.val === val) {
         break
       }
-      cur = cur && cur.next
+      currentNode = currentNode && currentNode.next
     }
 
-    if (!cur!.prev) {
+    if (!currentNode!.prev) {
       this.removeHead()
       return true
     }
 
-    if (!cur!.next) {
+    if (!currentNode!.next) {
       this.removeTail()
       return true
     }
 
-    cur!.prev.next = cur!.next
-    cur!.next.prev = cur!.prev
-    cur!.next = cur!.prev = null
+    currentNode!.prev.next = currentNode!.next
+    currentNode!.next.prev = currentNode!.prev
+    currentNode!.next = currentNode!.prev = null
 
     this._length--
     return true

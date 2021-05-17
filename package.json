@@ -1,0 +1,27 @@
+{
+  "name": "ts-data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^26.6.3",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/well-balanced/ts-data-structure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/well-balanced/ts-data-structure/issues"
+  },
+  "homepage": "https://github.com/well-balanced/ts-data-structure#readme"
+}

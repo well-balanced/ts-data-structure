@@ -30,12 +30,12 @@ export class LinkedList<T> {
   }
 
   get head(): T {
-    if (!this._head) throw Error()
+    if (!this._head) throw new Error('head does not exist')
     return this._head.val
   }
 
   get tail(): T {
-    if (!this._tail) throw Error()
+    if (!this._tail) throw new Error('tail does not exist')
     return this._tail.val
   }
 

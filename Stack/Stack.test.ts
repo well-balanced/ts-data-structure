@@ -1,6 +1,6 @@
 import { Stack } from './Stack'
 
-it('test complex scenario', () => {
+it('test queue', () => {
   const stack = new Stack<number>()
   stack.push(1)
   stack.push(2)

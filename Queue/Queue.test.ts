@@ -1,6 +1,6 @@
 import { Queue } from './Queue'
 
-it('test complex scenario', () => {
+it('test queue', () => {
   const queue = new Queue<number>()
   queue.add(1)
   queue.add(2)
